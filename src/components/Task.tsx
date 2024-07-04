@@ -1,7 +1,7 @@
 import { Trash2 } from "lucide-react";
 
 type Task = {
-  id: number;
+  id: string;
   name: string;
   isCompleted: boolean;
   handleRemove?: any;
