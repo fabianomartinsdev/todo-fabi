@@ -19,7 +19,9 @@ function TaskForm() {
     setValue(e.target.value);
   };
 
-  function handleAddTasks() {
+  function handleAddTasks(e: any) {
+    e.preventDefault();
+
     const task = {
       id: uuidv4(),
       name: value,
@@ -36,25 +38,25 @@ function TaskForm() {
       .then((response) => response.json)
       .catch((err) => console.error(err));
 
-    setValue("");
+    e.target.value = "";
   }
 
   return (
     <main className="w-screen">
-      <div className="flex items-center">
+      <form onSubmit={handleAddTasks} className="flex items-center" id="form">
         <button
           className="bg-red-400 p-2 rounded-md m-4 hover:opacity-80"
-          onClick={handleAddTasks}
+          type="submit"
         >
           <Plus />
         </button>
         <input
           type="text"
-          className="h-10 rounded pl-6 w-max text-red-300 outline-none focus:outline-red-400 bg-zinc-100"
+          className="h-10 rounded pl-6 w-max text-zinc-950 outline-none focus:outline-red-400 bg-zinc-100"
           placeholder="Adicionar tarefa"
           onChange={handleChange}
         />
-      </div>
+      </form>
       <span className="block w-11/12 bg-red-400 h-0.5 m-auto opacity-30" />
     </main>
   );
