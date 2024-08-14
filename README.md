@@ -23,3 +23,9 @@ npm run backend
 ```
 
 Pronto. Basta adicionar e remover suas tarefas da maneira que desejar!
+
+## Falta:
+
+- Limpar o input quando a tarefa é enviada.
+- Ao clicar na tarefa, alterar a cor do texto para sinalizar que tarefa foi concluída.
+- Adicionar um modal para preenchimento de tarefa, adicionar data/hora e outras opções para personalização.
